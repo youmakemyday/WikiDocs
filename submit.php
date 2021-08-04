@@ -28,7 +28,7 @@
   // default
   default:
    // alert and redirect
-   wdf_alert("The action ".$_GET['act']." does not exist!","danger");
+   wdf_alert("Die Aktion ".$_GET['act']." existiert nicht!","danger");
    wdf_redirect(PATH);
  }
 
@@ -48,7 +48,7 @@
    // update session
    $_SESSION['wikidocs']['authenticated']=2;
    // alert and redirect
-   wdf_alert("Authentication successfull!","success");
+   wdf_alert("Anmeldung erfolgreich!","success");
    wdf_redirect(PATH.$p_document);
   }
   // check view code
@@ -56,13 +56,13 @@
    // update session
    $_SESSION['wikidocs']['authenticated']=1;
    // alert and redirect
-   wdf_alert("Authentication successfull!","success");
+   wdf_alert("Anmeldung erfolgreich!","success");
    wdf_redirect(PATH.$p_document);
   }
   // authenticatiojn error
   if($_SESSION['wikidocs']['authenticated']==0){
    // alert and redirect
-   wdf_alert("Invalid authentication code!","danger");
+   wdf_alert("Login-Code falsch!","danger");
    wdf_redirect(PATH.$p_document);
   }
  }
@@ -80,19 +80,19 @@
   // check authentication
   if(wdf_authenticated()!=2){
    // alert and redirect
-   wdf_alert("You are not authenticated!","danger");
+   wdf_alert("Anmeldung erforderlich!","danger");
    wdf_redirect(PATH.$p_document);
   }
   // check document path
   if(!strlen($p_document)){
    // alert and redirect
-   wdf_alert("Document path cannot be empty","danger");
+   wdf_alert("Pfad darf nicht leer sein!","danger");
    wdf_redirect(PATH);
   }
   // check content
   if(!strlen($p_content)){
    // alert and redirect
-   wdf_alert("Document content cannot be empty!","danger");
+   wdf_alert("Bitte erst einen Inhalt erstellen!","danger");
    wdf_redirect(PATH.$p_document."?edit");
   }
   // initialize document
@@ -129,9 +129,9 @@
    // sum size of all images
    foreach($DOC->images() as $image_fe){$bytes+=filesize($DOC->DIR.$image_fe);}
    if($bytes<1000000){$size=number_format($bytes/1000,2,",",".")." KB";}else{$size=number_format($bytes/1000000,2,",",".")." MB";}
-   wdf_alert("Document succesfully saved! [".$size."]","success");
+   wdf_alert("Inhalt gespeichert! [".$size."]","success");
   }else{
-   wdf_alert("An error occurred while saving the document!","danger");
+   wdf_alert("Beim Speichern ist ein Fehler aufgetreten!","danger");
   }
   // redirect
   wdf_redirect(PATH.$p_document);
@@ -148,13 +148,13 @@
   // check authentication
   if(wdf_authenticated()!=2){
    // alert and redirect
-   wdf_alert("You are not authenticated!","danger");
+   wdf_alert("Anmeldung erforderlich!","danger");
    wdf_redirect(PATH.$p_document);
   }
   // check document path
   if(!strlen($p_document)){
    // alert and redirect
-   wdf_alert("Document path cannot be empty","danger");
+   wdf_alert("Pfad darf nicht leer sein!","danger");
    wdf_redirect(PATH);
   }
   // initialize document
@@ -164,7 +164,7 @@
   // move docuemnt to trash
   if(is_dir($DOC->DIR)){rename($DOC->DIR,DIR."trash/".$DOC->ID."_".date("Ymd_His"));}
   // alert and redirect
-  wdf_alert("Document deleted","warning");
+  wdf_alert("Inhalt wurde entfernt.","warning");
   wdf_redirect(PATH);
  }
 
