@@ -22,7 +22,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set("display_errors",$debug);
 // check for configuration file
-if(!file_exists(realpath(dirname(__FILE__))."/config.inc.php")){die("WikiDocs is not configured..<br><br>Launch <a href='setup.php'>Setup</a> script!");}
+if(!file_exists(realpath(dirname(__FILE__))."/config.inc.php")){die("WikiDocs ist nicht konfiguriert..<br><br><a href='setup.php'>Ersteinrichtung</a>");}
 // include configuration file
 require_once("config.inc.php");
 // get document id from rewrited url
