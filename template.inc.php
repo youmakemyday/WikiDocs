@@ -20,7 +20,7 @@
    gtag('config','<?php echo GTAG; ?>');
   </script>
 <?php } ?>
-  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="/css/icons.css" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="<?php echo $APP->PATH; ?>helpers/materialize-1.0.0/css/materialize.min.css" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="<?php echo $APP->PATH; ?>helpers/simplemde-1.11.2/css/simplemde<?php echo ($APP->DARK?"-dark":""); ?>.min.css" media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="<?php echo $APP->PATH; ?>helpers/highlightjs-10.2.1/css/<?php echo ($APP->DARK?"monokai-sublime":"default"); ?>.css" media="screen,projection">
