@@ -44,7 +44,7 @@
     <li class="search">
      <div class="search-wrapper">
       <form action="<?php echo $APP->PATH; ?>" method="get" autocomplete="off">
-       <input id="search" name="search" placeholder="Search in wiki.." value="<?php echo $_GET['search']; ?>"><i class="material-icons">search</i>
+       <input id="search" name="search" placeholder=" .. wiki durchsuchen .." value="<?php echo $_GET['search']; ?>"><i class="material-icons">search</i>
       </form>
      </div>
     </li>
@@ -81,7 +81,7 @@
   </header>
   <main>
    <div class="container">
-    <div class="row breadcrumbs" style="padding-top:18px">
+    <div class="row breadcrumbs" style="padding-top:28px">
      <div class="col s2 m1 offset-m1 hide-on-large-only">
       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light sidenav-trigger main-color" href="#" data-target="nav-mobile" data-position="bottom" data-tooltip="Sidebar"><i class="material-icons">menu</i></a>
      </div><!-- /col -->
@@ -106,23 +106,23 @@
      <div class="col s2 m2 l2">
 <?php if(MODE=="view"){ ?>
       <span class="right nowrap">
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?print"; ?>" target="_blank" data-position="bottom" data-tooltip="Print this document"><i class="material-icons">print</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?print"; ?>" target="_blank" data-position="bottom" data-tooltip="Inhalt drucken"><i class="material-icons">print</i></a>
 <?php if(wdf_authenticated()==2){ ?>
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="#" data-position="bottom" data-tooltip="Add new document" onClick="javascript:new_document();"><i class="material-icons">add_circle</i></a>
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?edit"; ?>" data-position="bottom" data-tooltip="Edit this document"><i class="material-icons">border_color</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="#" data-position="bottom" data-tooltip="Inhalt erstellen" onClick="javascript:new_document();"><i class="material-icons">add_circle</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?edit"; ?>" data-position="bottom" data-tooltip="Inhalt &auml;ndern"><i class="material-icons">border_color</i></a>
 <?php }else{ ?>
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?auth"; ?>" data-position="bottom" data-tooltip="Sign in to edit or<br>add new documents"><i class="material-icons">lock_open</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light main-color" href="<?php echo $DOC->URL."?auth"; ?>" data-position="bottom" data-tooltip="Anmelden um einen Inhalt <br> zu erstellen oder zu &auml;ndern"><i class="material-icons">lock_open</i></a>
 <?php } ?>
        </span>
 <?php } ?>
 <?php if(MODE=="edit"){ ?>
       <span class="right nowrap">
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light grey" href="<?php echo $DOC->URL; ?>" data-position="bottom" data-tooltip="Cancel editing"><i class="material-icons">cancel</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light grey" href="<?php echo $DOC->URL; ?>" data-position="bottom" data-tooltip="Bearbeitung abbrechen"><i class="material-icons">cancel</i></a>
        <!-- @todo integrare nella toolbar di simplemde -->
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light blue modal-trigger" href="#modal_uploader" data-position="bottom" data-tooltip="Images"><i class="material-icons">image</i></a>
-       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light red" href="<?php echo $APP->PATH; ?>submit.php?act=content_delete&document=<?php echo $DOC->ID; ?>" data-position="bottom" data-tooltip="Delete this content" onClick="return(confirm('Do you really want to delete this content?'))"><i class="material-icons">delete</i></a>
-       <button id="editor-revision" class="btn btn-floating btn-small tooltipped waves-effect waves-light orange" data-position="bottom" data-tooltip="Backup current version"><i id="editor-revision-checkbox" class="material-icons">check_box</i></button>
-       <button id="editor-save" class="btn btn-floating btn-small tooltipped waves-effect waves-light green" data-position="bottom" data-tooltip="Save"><i class="material-icons">save</i></button>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light blue modal-trigger" href="#modal_uploader" data-position="bottom" data-tooltip="Bild einf&uuml;gen"><i class="material-icons">image</i></a>
+       <a class="btn btn-floating btn-small tooltipped waves-effect waves-light red" href="<?php echo $APP->PATH; ?>submit.php?act=content_delete&document=<?php echo $DOC->ID; ?>" data-position="bottom" data-tooltip="Inhalt l&ouml;schen" onClick="return(confirm('Do you really want to delete this content?'))"><i class="material-icons">delete</i></a>
+       <button id="editor-revision" class="btn btn-floating btn-small tooltipped waves-effect waves-light orange" data-position="bottom" data-tooltip="Entwurf zwischenspeichern"><i id="editor-revision-checkbox" class="material-icons">check_box</i></button>
+       <button id="editor-save" class="btn btn-floating btn-small tooltipped waves-effect waves-light green" data-position="bottom" data-tooltip="Speichern"><i class="material-icons">save</i></button>
       </span>
 <?php } ?>
      </div><!-- /col -->
@@ -142,7 +142,7 @@
         <div class="row" style="margin-top:36px">
          <div class="input-field col s9">
           <input type="password" name="password" required autofocus>
-          <label for="password"><span class="main-color-text">Insert authentication code..</span></label>
+          <label for="password"><span class="main-color-text">.. Login-Code erforderlich ..</span></label>
          </div><!-- /input-field -->
          <div class="input-field col s3">
           <input type="submit" class="btn main-color" value="Submit">
@@ -175,11 +175,11 @@
              <input type="file" name="image" required>
             </div><!-- /btn -->
             <div class="file-path-wrapper">
-             <input type="text" id="uploader-path" class="file-path validate" placeholder="Select an image to upload..">
+             <input type="text" id="uploader-path" class="file-path validate" placeholder="gew&uuml;schtes Bild w&auml;hlen und hochladen ...">
             </div><!-- /file-path-wrapper -->
            </div><!-- /input-field -->
            <div class="input-field col s3">
-            <input id="uploader-submit" type="submit" class="btn main-color right" value="Upload">
+            <input id="uploader-submit" type="submit" class="btn main-color right" value="los gehts">
            </div><!-- /input-field -->
           </div><!-- /row -->
          </form>
@@ -222,7 +222,7 @@
       <p class="right-align"><small>Powered by <a href="https://github.com/Zavy86/WikiDocs" target="_blank">Wiki|Docs</a><?php if($APP->DEBUG){echo " ".$APP->VERSION;} if(wdf_authenticated()){echo " - <a href=\"".$DOC->URL."?exit\">Logout</a>";} ?></small></p>
      </div><!-- /col -->
      <div class="col s12 hide-on-large-only">
-     <p class="center-align"><small>This page was last edited on <?php echo wdf_timestamp_format($DOC->TIMESTAMP,"Y-m-d H:i"); ?></small></p>
+     <p class="center-align"><small>zuletzt ge&auml;ndert: <?php echo wdf_timestamp_format($DOC->TIMESTAMP,"Y-m-d H:i"); ?></small></p>
      <p class="center-align"><small><b><?php echo $APP->OWNER; ?></b><br><?php echo $APP->NOTICE; ?></p></small></p>
      <p class="center-align"><small>Powered by <a href="https://github.com/Zavy86/WikiDocs" target="_blank">Wiki|Docs</a><?php if($APP->DEBUG){echo " ".$APP->VERSION;} if(wdf_authenticated()){echo " - <a href=\"".$DOC->URL."?exit\">Logout</a>";} ?></small></p>
      </div><!-- /col -->
@@ -252,11 +252,11 @@
   <script type="text/javascript" src="<?php echo $APP->PATH; ?>js/images.js"></script>
 <?php } ?>
 <?php if(MODE=="edit" && !$_GET['draft'] && file_exists($DOC->DIR."draft.md")){ ?>
-  <script type="text/javascript">if(confirm("A draft has been found, do you want to load it??")){window.location.replace(window.location+"&draft=1");}</script>
+  <script type="text/javascript">if(confirm("Es wurde ein Entwurf gefunden, soll dieser wiederhergestellt werden??")){window.location.replace(window.location+"&draft=1");}</script>
 <?php } ?>
   <script type="text/javascript">
    function new_document(){
-    var new_path=prompt("Enter the new document path (like argument/section/title)",DOC.ID+"/");
+    var new_path=prompt("Pfad des Dokuments (z.B. /Abteilung/Artikel)",DOC.ID+"/");
     if(new_path!==DOC.ID+"/"){
      new_path=new_path.replace(" ","-").toLowerCase()+"?edit";
      window.location.href=APP.URL+new_path;
