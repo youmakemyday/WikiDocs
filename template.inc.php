@@ -83,7 +83,7 @@
    <div class="container">
     <div class="row breadcrumbs" style="padding-top:28px">
      <div class="col s2 m1 offset-m1 hide-on-large-only">
-      <a class="btn btn-floating btn-small tooltipped waves-effect waves-light sidenav-trigger main-color" href="#" data-target="nav-mobile" data-position="bottom" data-tooltip="Sidebar"><i class="material-icons">menu</i></a>
+      <a class="btn btn-floating btn-small tooltipped waves-effect waves-light sidenav-trigger main-color" href="#" data-target="nav-mobile" data-position="bottom" data-tooltip=""><i class="material-icons">menu</i></a>
      </div><!-- /col -->
      <div class="col s8 m7 l8 offset-l1 center-on-small-only" style="padding-top:3px">
       <span>
@@ -216,7 +216,7 @@
     <div class="divider"></div>
     <div class="row">
      <div class="col m5 offset-m1 hide-on-med-and-down">
-      <p class="left-align"><small>This page was last edited on <?php echo wdf_timestamp_format($DOC->TIMESTAMP,"Y-m-d H:i"); ?></small></p>
+      <p class="left-align"><small>zuletzt ge&auml;ndert: <?php echo wdf_timestamp_format($DOC->TIMESTAMP,"Y-m-d H:i"); ?></small></p>
      </div><!-- /col -->
      <div class="col m5 hide-on-med-and-down">
       <p class="right-align"><small>Powered by <a href="https://github.com/Zavy86/WikiDocs" target="_blank">Wiki|Docs</a><?php if($APP->DEBUG){echo " ".$APP->VERSION;} if(wdf_authenticated()){echo " - <a href=\"".$DOC->URL."?exit\">Logout</a>";} ?></small></p>
