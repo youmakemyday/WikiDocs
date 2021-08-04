@@ -21,7 +21,7 @@
   wdf_dump("Update per git!",null,null,true);
   // check for localhost
   if(in_array($_SERVER['HTTP_HOST'],array("localhost","127.0.0.1"))){
-   wdf_dump("Update per git nicht moeglich!",null,null,true);
+   wdf_dump("Update per git nicht m&ouml;glich!",null,null,true);
    die();
   }else{
    // make command
@@ -37,9 +37,9 @@
   $update=file_get_contents("https://github.com/youmakemyday/WikiDocs/archive/master.zip");
   $bytes=file_put_contents(DIR."update.zip",$update);
   if($bytes>0){
-   wdf_dump("Update Download erfolgreich!",null,null,true);
+   wdf_dump("Download des Updates erfolgreich!",null,null,true);
   }else{
-   wdf_dump("Update Download fehlgeschlagen!",null,null,true);
+   wdf_dump("Download des Updates fehlgeschlagen!",null,null,true);
   }
   // backup current version
   $backup_name=date("Ymd_His").".zip";
@@ -47,8 +47,8 @@
   $shell_output=exec('whoami')."@".exec('hostname').":".shell_exec($command);
   wdf_dump($shell_output,$command,null,true);
   // check if previous update was deleted
-  if(file_exists(DIR."backups/".$backup_name)){wdf_dump("Backup completed!",null,null,true);}
-  else{die("An error occured zipping backup!");}
+  if(file_exists(DIR."backups/".$backup_name)){wdf_dump("Backup erstellt!",null,null,true);}
+  else{die("Fehler beim Erstellen des Backups aufgetreten!");}
   // check for old update directory
   if(is_dir(DIR."update")){
    // delete previous update directories
