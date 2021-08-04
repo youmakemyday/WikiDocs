@@ -71,6 +71,17 @@ services:
 ```
 - Make sure that RewriteBase is the same as the PATH in the configuration file
 
+For a nginx WebServer you need someting like that in /etc/nginx/sites-available/wikidocs
+
+...
+      location /wikidocs/ {
+                if (!-e $request_filename){
+                rewrite ^/(.*)$ /index.php?doc=$1 last;
+                }
+                try_files $uri $uri/ =404;
+        }
+...
+
 ## Developers
 **Manuel Zavatta**
 - [GitHub](https://github.com/Zavy86)
