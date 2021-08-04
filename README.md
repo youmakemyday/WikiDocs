@@ -27,8 +27,8 @@ Authentication code is: `demo`
 
 ## Setup
 ### Manual
-- [Download](https://github.com/Zavy86/wikidocs/releases) the lastest release
-- Clone the repo `git clone https://github.com/Zavy86/wikidocs.git`
+- [Download](https://github.com/youmakemyday/wikidocs/releases) the lastest release
+- Clone the repo `git clone https://github.com/youmakemyday/wikidocs.git`
 
 ### Docker
 There is a [Docker image](https://hub.docker.com/r/reyemxela/wikidocs) that sets up WikiDocs with Apache2 and PHP automatically.
