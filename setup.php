@@ -106,43 +106,43 @@
       <div class="row">
        <div class="input-field col s12">
          <input type="text" name="path" class="validate" value="<?php echo PATH_URI; ?>" required>
-         <label for="path"><span class="green-text">Path</span></label>
+         <label for="path"><span class="green-text">Pfad</span></label>
        </div>
       </div>
       <div class="row">
        <div class="input-field col s12 m5">
          <input type="text" name="title" class="validate" value="<?php echo TITLE; ?>" required>
-         <label for="title"><span class="green-text">Title</span></label>
+         <label for="title"><span class="green-text">Titel</span></label>
        </div>
        <div class="input-field col s12 m7">
          <input type="text" name="subtitle" class="validate" value="<?php echo SUBTITLE; ?>" required>
-         <label for="subtitle"><span class="green-text">Subtitle</span></label>
+         <label for="subtitle"><span class="green-text">Untertitel</span></label>
        </div>
       </div>
       <div class="row">
        <div class="input-field col s12 m5">
-         <input type="text" name="owner" class="validate" placeholder="Contents owner" required>
-         <label for="title"><span class="green-text">Owner</span></label>
+         <input type="text" name="owner" class="validate" placeholder="Betreiber" required>
+         <label for="title"><span class="green-text">Betreiber</span></label>
        </div>
        <div class="input-field col s12 m7">
-         <input type="text" name="notice" class="validate" placeholder="Contents copyright notice" required>
-         <label for="subtitle"><span class="green-text">Notice</span></label>
+         <input type="text" name="notice" class="validate" placeholder="Copyright Hinweis" required>
+         <label for="subtitle"><span class="green-text">Copyright Hinweis</span></label>
        </div>
       </div>
       <div class="row">
        <div class="input-field col s12 m5">
-         <input type="text" name="editcode" class="validate" placeholder="Choose a strong password for editing.." required>
-         <label for="subtitle"><span class="green-text">Edit authentication code</span></label>
+         <input type="text" name="editcode" class="validate" placeholder="w&auml;hle einen starken Login-Code .." required>
+         <label for="subtitle"><span class="green-text">Login-Code eingeben</span></label>
        </div>
        <div class="input-field col s12 m7">
-         <input type="text" name="viewcode" class="validate" placeholder="Leave it blank if you want to make this wiki public..">
-         <label for="title"><span class="green-text">View authentication code</span></label>
+         <input type="text" name="viewcode" class="validate" placeholder="leer lassen, wenn der Inhalt &ouml;ffentlich sichtbar sein soll">
+         <label for="title"><span class="green-text">Login-Code f&uuml;r Betrachter</span></label>
        </div>
       </div>
       <div class="row">
        <div class="input-field col s6 m3">
-         <input type="text" name="color" class="validate" placeholder="Choose the main color.. (#4CAF50)" value="#4CAF50" required>
-         <label for="subtitle"><span class="green-text">Color</span></label>
+         <input type="text" name="color" class="validate" placeholder="Farbgestaltung w&auml;hlen.. (#4CAF50)" value="#4CAF50" required>
+         <label for="subtitle"><span class="green-text">Farbe</span></label>
        </div>
        <div class="input-field col s6 m2">
         <label for="check-dark">
@@ -151,13 +151,13 @@
         </label>
        </div>
        <div class="input-field col s12 m7">
-         <input type="text" name="gtag" class="validate" placeholder="Insert you Google Analytics tag.. (like UA-123456789-1)">
+         <input type="text" name="gtag" class="validate" placeholder="Google Analytics tag.. (z.B UA-123456789-1)">
          <label for="subtitle"><span class="green-text">Google Analytics tag</span></label>
        </div>
       </div>
       <div class="row">
        <div class="input-field col s12 m12">
-        <button type="submit" class="btn btn-block waves-effect waves-light green right">Continue<i class="material-icons right">keyboard_arrow_right</i></button>
+        <button type="submit" class="btn btn-block waves-effect waves-light green right">weiter<i class="material-icons right">keyboard_arrow_right</i></button>
        </div>
       </div>
      </form>
@@ -170,8 +170,8 @@
   $check_ko="<span class='secondary-content'><i class='material-icons red-text'>cancel</i></span>";
 ?>
     <div class="col s12">
-     <h2>Checking configuration</h2>
-     <p>Your configuration has been verified..</p>
+     <h2>Konfiguration</h2>
+     <p>Konfiguration wurde best&auml;tigt...</p>
      <ul class="collection">
       <li class="collection-item"><div>PATH: <?php echo $_POST['path'].($checks_array['path']?$check_ok:$check_ko); ?></div></li>
       <li class="collection-item"><div>TITLE: <?php echo $_POST['title'].($checks_array['title']?$check_ok:$check_ko); ?></div></li>
@@ -186,9 +186,9 @@
      </ul>
      <div class="input-field col s12">
 <?php if($errors){ ?>
-      <button onClick="javascript:window.history.back();" class="btn btn-block waves-effect waves-light green lighten-2">Edit configuration<i class="material-icons left">keyboard_arrow_left</i></button>
+      <button onClick="javascript:window.history.back();" class="btn btn-block waves-effect waves-light green lighten-2">Konfiguration bearbeiten<i class="material-icons left">keyboard_arrow_left</i></button>
 <?php }else{ ?>
-       <a href="setup.php?act=conclude" class="waves-effect waves-light btn green white-text right">Continue<i class="material-icons right">keyboard_arrow_right</i></a>
+       <a href="setup.php?act=conclude" class="waves-effect waves-light btn green white-text right">weiter<i class="material-icons right">keyboard_arrow_right</i></a>
 <?php } ?>
      </div>
     </div><!-- /col -->
@@ -197,13 +197,13 @@
  if($g_act=="conclude"){
 ?>
     <div class="col s12">
-     <h2>Saving configuration</h2>
+     <h2>Konfiguration gespeichert</h2>
 <?php if($configured){ ?>
-     <p>Your configuration has been saved..</p>
-     <p><a href="<?php echo $_SESSION['wikidocs']['setup']['path']; ?>">Continue</a> to your wiki!</p>
+     <p>Deine Konfiguration wurde gespeichert..</p>
+     <p><a href="<?php echo $_SESSION['wikidocs']['setup']['path']; ?>">weiter</a> zum wiki!</p>
      <i class="material-icons small green-text">check_circle</i>
 <?php }else{ ?>
-     <p class="red-text">An error occurred while saving the configuration!</p>
+     <p class="red-text">Ein Fehler ist beim Speichern der Konfiguration aufgetreten!</p>
      <i class="material-icons small red-text">cancel</i>
 <?php } ?>
 <?php } ?>
